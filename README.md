@@ -1,7 +1,3 @@
-Here's a **clear and concise** README file for your AI cold-calling project. 🚀  
-
----
-
 ### **📌 AI Cold Calling Assistant**
 An AI-powered cold-calling assistant that handles **demo scheduling, interview screening, and payment follow-ups** using **speech-to-text (STT), text-to-speech (TTS), and AI conversation handling**.  
 
