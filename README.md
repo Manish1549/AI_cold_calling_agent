@@ -79,5 +79,7 @@ python voice_ai.py
 🚀 Built with Python, Google Gemini API, Flask, and TailwindCSS  
 
 ---
+**More Info**
+https://drive.google.com/drive/folders/10jUiEqGy058t3b44D7IIfGsgVYltRO9y?usp=drive_link
 
 This README gives a **quick and detailed overview** of your project. For any query mail on manishiitr9@gmail.com 🔥
