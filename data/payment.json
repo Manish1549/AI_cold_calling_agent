@@ -1,0 +1,6 @@
+{
+    "greeting": "Namaste {name} ji! Main [Company] se bol raha hoon. Aapka ₹{amount} ka payment due hai.",
+    "question": "25 February ko due tha. Kya aap isse aaj clear kar paenge?",
+    "follow_up": "Kab tak process kar sakein to best rahega?",
+    "closing": "Theek hai {name} ji! Koi aur madad chahiye to bataiye."
+}

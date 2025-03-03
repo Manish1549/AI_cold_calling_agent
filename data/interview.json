@@ -1,0 +1,6 @@
+{
+    "greeting": "Hello {name}! Aap [Company] ke [Job Role] interview ke liye interested hain?",
+    "question": "Achha, aapke paas [Job Role] me kitna experience hai?",
+    "follow_up": "Aap remote work ke liye comfortable hain?",
+    "closing": "Theek hai, hum aapko next steps ke baare me jald update karenge!"
+}

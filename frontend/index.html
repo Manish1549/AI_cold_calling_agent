@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cold Calling Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#F59E0B'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .floating-notification {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .scroll-banner {
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-['Pacifico'] text-primary">logo</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary">How It Works</a>
+                    <a href="#demo" class="text-gray-600 hover:text-primary">Demo</a>
+                    <button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 via-white to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6">Transform Your Cold Calling with AI</h1>
+                    <p class="text-xl text-gray-600 mb-4">Experience seamless multilingual conversations</p>
+                    <p class="text-lg text-gray-500 mb-8">"Aapka cold calling ka partner" - Your trusted AI companion</p>
+                    <button class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90 mb-8">Try AI Agent Now</button>
+                    
+                    <div class="floating-notification bg-white p-4 rounded-lg shadow-lg inline-block">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="ri-customer-service-2-line text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">New Demo Booked!</p>
+                                <p class="text-sm text-gray-500">Just now • via AI Agent</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://public.readdy.ai/ai/img_res/fad4702805fea7e74ac0bebfd1fb90eb.jpg" class="rounded-xl shadow-2xl" alt="AI Cold Calling">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">Powerful Features for Your Business</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-calendar-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Automated Demo Booking</h3>
+                    <p class="text-gray-600">Smart scheduling of ERP system demos with natural conversation flow in Hinglish.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-user-voice-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">AI Interview Assistant</h3>
+                    <p class="text-gray-600">Conduct initial candidate screenings efficiently with our AI-powered interview system.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-money-dollar-circle-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Smart Payment Reminders</h3>
+                    <p class="text-gray-600">Automated follow-ups for payments and orders with personalized communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="relative">
+                    <div class="absolute -left-4 -top-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/be959356b8ff594f984aaf26b37c14f9.jpg" class="rounded-lg mb-6" alt="Step 1">
+                        <h3 class="text-xl font-bold mb-4">AI Receives Call</h3>
+                        <p class="text-gray-600">Our AI agent automatically answers and identifies the caller's intent.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-4 -top-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/dd728fe564e71152a67aaaef91b9d758.jpg" class="rounded-lg mb-6" alt="Step 2">
+                        <h3 class="text-xl font-bold mb-4">Natural Conversation</h3>
+                        <p class="text-gray-600">Seamless bilingual communication in Hinglish for better engagement.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-4 -top-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/ea491246546654094da8daac2064857e.jpg" class="rounded-lg mb-6" alt="Step 3">
+                        <h3 class="text-xl font-bold mb-4">Task Completion</h3>
+                        <p class="text-gray-600">Successfully completes booking, interview, or payment collection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="py-20">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold mb-6">Try AI Cold Calling Live</h2>
+            <select id="scenarioSelect" class="border border-gray-300 rounded-lg px-4 py-2 mb-4">
+                <option value="demo">Demo Scheduling</option>
+                <option value="interview">Interview Screening</option>
+                <option value="payment">Payment Follow-up</option>
+            </select>
+            <button onclick="startAICall()" class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90">
+                Start AI Call
+            </button>
+        </div>
+        <div id="aiConversation" class="mt-8 bg-gray-100 p-6 rounded-lg shadow-lg hidden">
+            <h3 class="text-xl font-bold mb-4">Live Conversation</h3>
+            <div id="conversationLog" class="space-y-4 max-h-60 overflow-y-auto"></div>
+        </div>
+        
+                <div id="demoContent" class="bg-gray-50 p-6 rounded-lg mb-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="ri-robot-line text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="bg-white p-4 rounded-lg shadow-sm inline-block">Hello! I'm your AI assistant. How can I help you schedule a demo of our ERP system today?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 justify-end">
+                            <div class="flex-1 text-right">
+                                <p class="bg-primary/10 p-4 rounded-lg shadow-sm inline-block">Hi, main ERP system ka demo dekhna chahta hoon.</p>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                <i class="ri-user-line text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90">Book Live Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Ready to Transform Your Business?</h2>
+                    <p class="text-gray-600 mb-8">Join hundreds of businesses already using our AI cold calling solution.</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90">Start Free Trial</button>
+                        <button class="bg-white text-primary border-2 border-primary px-8 py-4 !rounded-button text-lg hover:bg-primary/10">Schedule Demo</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                        <p class="text-gray-600">Success Rate</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">5000+</div>
+                        <p class="text-gray-600">Calls Handled</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+                        <p class="text-gray-600">Availability</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                        <p class="text-gray-600">Languages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <span class="text-2xl font-['Pacifico'] text-white mb-4 block">logo</span>
+                    <p class="text-gray-400">Transforming cold calling with AI technology</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#demo" class="text-gray-400 hover:text-white">Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">support@aicalling.com</li>
+                        <li class="text-gray-400">+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="ri-twitter-line text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="ri-linkedin-line text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="ri-facebook-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AI Calling Assistant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chat-widget" class="fixed bottom-4 right-4 z-50">
+        <button onclick="toggleChat()" class="bg-primary text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90">
+            <i class="ri-message-3-line text-2xl"></i>
+        </button>
+    </div>
+
+    <script>
+        function switchDemo(demo) {
+            const buttons = document.querySelectorAll('#demo button');
+            buttons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+            buttons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.classList.add('bg-primary', 'text-white');
+            
+            const demoContent = {
+                demo1: `
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="ri-robot-line text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="bg-white p-4 rounded-lg shadow-sm inline-block">Hello! I'm your AI assistant. How can I help you schedule a demo of our ERP system today?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 justify-end">
+                            <div class="flex-1 text-right">
+                                <p class="bg-primary/10 p-4 rounded-lg shadow-sm inline-block">Hi, main ERP system ka demo dekhna chahta hoon.</p>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                <i class="ri-user-line text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                demo2: `
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="ri-robot-line text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="bg-white p-4 rounded-lg shadow-sm inline-block">Welcome to the interview! Could you tell me about your experience with software development?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 justify-end">
+                            <div class="flex-1 text-right">
+                                <p class="bg-primary/10 p-4 rounded-lg shadow-sm inline-block">Mujhe 5 saal ka experience hai software development mein.</p>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                <i class="ri-user-line text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                demo3: `
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="ri-robot-line text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="bg-white p-4 rounded-lg shadow-sm inline-block">Hi! I'm calling regarding the pending payment for Invoice #12345. Could we process that today?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 justify-end">
+                            <div class="flex-1 text-right">
+                                <p class="bg-primary/10 p-4 rounded-lg shadow-sm inline-block">Haan, main abhi payment kar dunga. Payment link share kar dijiye.</p>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                <i class="ri-user-line text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                `
+            };
+            
+            document.getElementById('demoContent').innerHTML = demoContent[demo];
+        }
+
+        function toggleChat() {
+            const chatWidget = document.createElement('div');
+            chatWidget.className = 'fixed bottom-24 right-4 w-80 bg-white rounded-xl shadow-2xl p-4';
+            chatWidget.innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-semibold">Chat Support</h3>
+                    <button onclick="this.parentElement.parentElement.remove()" class="text-gray-500 hover:text-gray-700">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <div class="h-80 overflow-y-auto mb-4 space-y-4">
+                    <div class="flex items-start space-x-2">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="ri-customer-service-2-line text-primary"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="bg-gray-100 p-3 rounded-lg inline-block">How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-2">
+                    <input type="text" placeholder="Type your message..." class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-primary">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90">
+                        <i class="ri-send-plane-line"></i>
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(chatWidget);
+        }
+    </script>
+    <script>
+        function startAICall() {
+            const scenario = document.getElementById("scenarioSelect").value;
+            document.getElementById("aiConversation").classList.remove("hidden");
+            document.getElementById("conversationLog").innerHTML = "<p class='text-gray-500'>Starting AI conversation...</p>";
+    
+            fetch("/start_ai_call", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ scenario: scenario })
+            })
+            .then(response => response.json())
+            .then(data => updateConversation(data))
+            .catch(error => console.error("Error:", error));
+        }
+    
+        function updateConversation(data) {
+            const log = document.getElementById("conversationLog");
+            log.innerHTML += `<p><strong>AI:</strong> ${data.ai_message}</p>`;
+            log.innerHTML += `<p><strong>User:</strong> ${data.user_message}</p>`;
+            log.scrollTop = log.scrollHeight;  // Auto-scroll
+        }
+    </script>
+    
+</body>
+</html>
